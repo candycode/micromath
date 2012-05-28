@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$execution_8h.html" title="declaration and definition of execution&#45;related types and functions." alt="" coords="195,86,285,117"/>
+<area shape="rect" id="node17" href="$shared__ptr_8h.html" title="implementation of reference counted pointer" alt="" coords="328,166,421,197"/>
+<area shape="rect" id="node21" href="$math__parser_8h.html" title="declaration of math_parser class and related types" alt="" coords="625,86,732,117"/>
+<area shape="rect" id="node46" href="$exception_8h.html" title="exception base class" alt="" coords="1064,166,1155,197"/>
+<area shape="rect" id="node33" href="$mmp__algorithm_8h.html" title="re&#45;implemented STL algorithms to guarantee sequential in&#45;order traversal of sequences, not guaranteed by ISO C++ 14882 standard" alt="" coords="976,246,1099,277"/>
+<area shape="rect" id="node36" href="$text__utility_8h.html" title="definition of text processing functions" alt="" coords="901,166,989,197"/>
+</map>
