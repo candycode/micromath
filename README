@@ -9,7 +9,7 @@ MicroMath+ is copyright (c) Ugo Varetto
 
 
 Features:
-	 - transforms a mathematical expression into RPN form
+	 - transforms a mathematical expression into RPN format
 	 - compiles the RPN expression into a sequence of instructions
 	 - executes the compiled program
      The parser returns a list of tokens using only information about
@@ -280,7 +280,7 @@ void TestParser( const string& expr )
 NOTE: 
 	the execution is based on a stack and an array of instructions
     executed sequentially: this works fine for scalar values
-    but is far from optimal in case of multi-dimensional operands, I'm
+    but is far from optimal in the case of multi-dimensional operands, I'm
     currently working at a multi_stack structure that allows to
     get/set/reference multiple values at once and at functions that get
     references to operands in the stack without removing the values but
