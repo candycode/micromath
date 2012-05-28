@@ -1,5 +1,5 @@
 This is the latest (moslty)unedited version of code from an old project; I used previous versions of this code to
-perform evaluation of functional representation used to describe geometrical objects, which
+perform evaluation of functional representations used to describe geometrical objects, which
 later on turned out to be completely useless: it is way easier to directly evaluate any 
 expression at run-time through GLSL or (now)OpenCL in parallel and record the results into an output array.
 -----------------------------------------------------------------------------------------------------------
