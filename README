@@ -1,3 +1,9 @@
+This is the latest (moslty)unedited version of code from an old project; I used previous versions of this code to
+perform evaluation of functional representation used to describe geometrical objects, which
+later on turned out to be completely useless: it is way easier to directly evaluate any 
+expression at run-time through GLSL or (now)OpenCL in parallel and record the results into an output array.
+-----------------------------------------------------------------------------------------------------------
+
 ______________
 ______________
 
@@ -5,13 +11,13 @@ MicroMath+ 2.1
 ______________
 ______________
 
-MicroMath+ - copyright (c) 2002 Ugo Varetto
+MicroMath+ - copyright (c) 2001 Ugo Varetto
 
 
 Features:
-	 - transforms a mathematical expression into RPN format
-	 - compiles the RPN expression into a sequence of instructions
-	 - executes the compiled program
+	 - transform a mathematical expression into RPN format
+	 - compile the RPN expression into a sequence of instructions
+	 - execute the compiled program
      The parser returns a list of tokens using only information about
      operators
      * any word starting with '_' or a letter and containing
@@ -204,22 +210,22 @@ void TestParser( const string& expr )
  
   // define operators for parser
   op_t ops_array[] = { // example of function accepting 6 parameters and returning
-  	                   // 3 values
-  					   op_t( "cross3", 1, 0, 6, 3 ),
-					   op_t( "^", 2 ), op_t( "*", 2, 3, 3, 1 ),
-					   op_t( "*", 2 ), op_t( "/", 2 ),
-					   op_t( "-", 1, 0, 1, 1 ), op_t( "-", 2 ),
-					   op_t( "-", 2, 3, 3, 3 ),
-					   op_t( "+", 2, 3, 3, 3 ), op_t( "+", 2 ),
-				       op_t( "=", 2, 1, 1, 1, true ),  
-					   op_t( "=", 2, 3, 3, 3, true )   // 2 arguments, swap arguments
-									                   // to have variable name just
-									                   // before assignment operator
-									                   // x = 2 --> 2 x =
-									                   // This makes it easy to find
-									                   // the variable when the assignment
-									                   // operator is found. 
-					 }; 	
+  	               // 3 values
+                       op_t( "cross3", 1, 0, 6, 3 ),
+                       op_t( "^", 2 ), op_t( "*", 2, 3, 3, 1 ),
+                       op_t( "*", 2 ), op_t( "/", 2 ),
+                       op_t( "-", 1, 0, 1, 1 ), op_t( "-", 2 ),
+                       op_t( "-", 2, 3, 3, 3 ),
+                       op_t( "+", 2, 3, 3, 3 ), op_t( "+", 2 ),
+                       op_t( "=", 2, 1, 1, 1, true ),  
+                       op_t( "=", 2, 3, 3, 3, true )   // 2 arguments, swap arguments
+                                                       // to place variable name just
+                                                       // before assignment operator
+                                                       // x = 2 --> 2 x =
+                                                       // This makes it easy to find
+                                                       // the variable when the assignment
+                                                       // operator is found. 
+                     }; 	
  
   // anything in the form 'function_name( x1, x2,..., xn)' is assumed to be
   // a function accepting n arguments and returning 1 value.
@@ -280,11 +286,12 @@ void TestParser( const string& expr )
 NOTE: 
 	the execution is based on a stack and an array of instructions
     executed sequentially: this works fine for scalar values
-    but is far from optimal in the case of multi-dimensional operands, I'm
-    currently working at a multi_stack structure that allows to
+    but it is far from optimal in the case of multi-dimensional operands;
+    I have been testing for some time with a multi_stack structure that allows to
     get/set/reference multiple values at once and at functions that get
     references to operands in the stack without removing the values but
-    changing the values in place where possible.
+    changing the values in place where possible. Not sure when/if the new
+    approach is going to be implemented.
 	
  												  
 																											      						         	  	  	  	  
